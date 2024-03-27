@@ -17,8 +17,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  int _onpageindex = 0;
-  var _pagedata =[Chats(),Updates(),Communities(),Calls()];
+  int _onpageindex = 0; //? Where to index start
+  
+  var _pagedata =[ Chats(),Updates(),Communities(),Calls() ];
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,19 +77,19 @@ class _HomeState extends State<Home> {
               color: Color.fromARGB(237, 255, 255, 255)
             ),),),
 
-        body: _pagedata[_onpageindex],
+       body: _pagedata[_onpageindex],
 
-        floatingActionButton: FloatingActionButton(onPressed: () {
+       floatingActionButton: FloatingActionButton(onPressed: () {
           
         },
         
         child: Icon(FontAwesomeIcons.folderPlus,color: Colors.white,),
         backgroundColor: Colors.teal,
         
-
         ),
         
-        bottomNavigationBar: BottomNavigationBar(items:<BottomNavigationBarItem>
+       bottomNavigationBar: BottomNavigationBar(
+          items:<BottomNavigationBarItem>
          [
           BottomNavigationBarItem(icon: Icon(Icons.chat_rounded), label: 'Chats',),
           BottomNavigationBarItem(icon: Icon(Icons.tips_and_updates_outlined), label: 'Updates'),
@@ -97,8 +99,10 @@ class _HomeState extends State<Home> {
 
          selectedItemColor: Colors.black,
          unselectedItemColor: Colors.grey[800],
-         unselectedLabelStyle: TextStyle(color: Colors.black),
-
+         enableFeedback: true,
+         showUnselectedLabels: true,
+         selectedFontSize: 10,
+         unselectedFontSize: 10,
          elevation: 0,
 
          currentIndex: _onpageindex,
