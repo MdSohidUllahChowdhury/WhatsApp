@@ -84,7 +84,9 @@ class _HomeState extends State<Home> {
               fontSize: 18,
               fontWeight: FontWeight.w200,
               color: Color.fromARGB(237, 255, 255, 255)
-            ),),),
+            ),
+            ),
+            ),
 
        body: _pagedata[_onpageindex],
 
