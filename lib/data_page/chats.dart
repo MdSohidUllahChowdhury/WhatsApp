@@ -16,7 +16,7 @@ class _ChatsState extends State<Chats> {
     return Scaffold(
       body: Column(
         children: [
-           Container(
+        Container(
             height: 35,
             width: double.infinity,
             color: Colors.amber,
@@ -33,10 +33,11 @@ class _ChatsState extends State<Chats> {
               
             )
           ),
+        SizedBox(height: 4,),
+      
         
-        
-            SizedBox(height: 6,),
-             Container(
+       SizedBox(height: 6,),
+       Container(
             height: 35,
             width: double.infinity,
             color: Colors.amber,
@@ -52,6 +53,7 @@ class _ChatsState extends State<Chats> {
             )
           ),
         ],
+        
       ),
     );
   }
