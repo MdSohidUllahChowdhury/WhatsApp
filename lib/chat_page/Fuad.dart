@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+//import 'package:emoji_picker_flutter/emoji_picker_flutter.dart'
 
 class Fuad extends StatelessWidget {
   const Fuad({super.key});
@@ -63,8 +64,7 @@ class Fuad extends StatelessWidget {
             ],
             toolbarHeight: 45,
             backgroundColor: Colors.teal,
-            elevation: 0,
-            
+            elevation: 0, 
             leading:
             
             CircleAvatar(
@@ -86,16 +86,7 @@ class Fuad extends StatelessWidget {
    
       body: Column(mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Row(
-            children: [
-              Container(margin: EdgeInsets.fromLTRB(300, 0, 0, 0),
-                child: CircleAvatar(
-                  child: Icon(Icons.mic,color: Colors.white,),
-                  backgroundColor: Colors.teal,
-                ),
-              )
-            ],
-          ),
+          
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 25),
              child: TextFormField(
@@ -107,7 +98,7 @@ class Fuad extends StatelessWidget {
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(45)),
                 
                 
-                suffix: InkWell(onTap: () {} ,
+                suffix: InkWell(onTap:(){} ,
                   child: Icon(Icons.attach_file_outlined)),
                 
                 suffixIcon: Icon(Icons.camera_alt),
@@ -116,9 +107,19 @@ class Fuad extends StatelessWidget {
                 
               ),
             ),
-            
           ),
-        
+Row(
+            children: [
+              Container(margin: EdgeInsets.only(left: 300),
+                child: CircleAvatar(
+                  child: Icon(Icons.mic,color: Colors.white,),
+                  backgroundColor: Colors.teal,
+                ),
+              )
+            ],
+          ),
+
+
         ],
       ),
    

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, avoid_print
 import 'package:flutter/material.dart';
-import 'package:newwhatsapp/chat_page/Fuad.dart';
+import 'package:newwhatsapp/chat_page/fuad.dart';
 //import 'package:flutter/widgets.dart';
 
 class Chats extends StatefulWidget {

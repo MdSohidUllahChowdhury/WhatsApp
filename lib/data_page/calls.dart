@@ -10,10 +10,22 @@ class Calls extends StatefulWidget {
 }
 
 class _CallsState extends State<Calls> {
+ 
+ 
+  Widget listcall = ListTile(
+                  leading: CircleAvatar(
+                  backgroundColor: Colors.teal,
+                  radius: 20, ),
+              title: Text('Shakil'),
+              subtitle: Text('You missed call',style: TextStyle(fontSize: 12),),
+              trailing: Icon((Icons.missed_video_call)),
+            
+            );
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.black,
       body: Column(
         children: [
          ListTile(
@@ -24,11 +36,21 @@ class _CallsState extends State<Calls> {
           title: Text('Create call link'),
           subtitle: Text('Share a link for your WhatsApp call'),
          ),
-         
+         SizedBox(height: 10,),
+          
+            listcall,
+            listcall,
+            listcall,
+            listcall,
+            listcall,
+            listcall,
+            
+            
          
         ],
         
-      )
+      ),
+      
     );
   }
 }

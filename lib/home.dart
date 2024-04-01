@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, prefer_final_fields, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-//import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:newwhatsapp/data_page/calls.dart';
 import 'package:newwhatsapp/data_page/chats.dart';
 import 'package:newwhatsapp/data_page/communities.dart';
 import 'package:newwhatsapp/data_page/updates.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,14 +29,18 @@ class _HomeState extends State<Home> {
             actions: [
                Container(
                   child: InkWell(onTap: () {},
-                    child: Icon(Icons.camera_alt_outlined,color: Colors.white,)),
+                    child: Icon(Icons.camera_alt_outlined,
+                    color: Colors.white,)
+                    ),
                ),
 
                SizedBox(width: 10,),
 
                 Container(
                   child: InkWell(onTap: () {},
-                    child: Icon(Icons.search,color: Colors.white,)),
+                    child: Icon(Icons.search,
+                    color: Colors.white,)
+                    ),
                ),
 
               
@@ -76,9 +79,7 @@ class _HomeState extends State<Home> {
                 ),
               
             ],
-            toolbarHeight: 45,
-            backgroundColor: Colors.teal,
-            elevation: 0,
+           
             title:const Text("WhatsApp",
             style: TextStyle(
               fontSize: 18,
@@ -86,16 +87,23 @@ class _HomeState extends State<Home> {
               color: Color.fromARGB(237, 255, 255, 255)
             ),
             ),
+
+            toolbarHeight: 45,
+            backgroundColor: Colors.teal,
+            elevation: 0,
             ),
 
        body: _pagedata[_onpageindex],
 
-       floatingActionButton: FloatingActionButton(onPressed: () {
-          
-        },
+       floatingActionButton: FloatingActionButton(
+        onPressed: () {},
         
-        child: Icon(FontAwesomeIcons.folderPlus,color: Colors.white,),
+        child: Icon(FontAwesomeIcons.folderPlus,
+        color: Colors.white,
+        size: 25,
+        ),
         backgroundColor: Colors.teal,
+        
         
         ),
         
