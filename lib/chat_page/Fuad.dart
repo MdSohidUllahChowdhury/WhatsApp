@@ -49,14 +49,15 @@ class _FuadState extends State<Fuad> {
             toolbarHeight: 45,
             backgroundColor: Colors.teal,
             elevation: 0, 
+        
          leading:
             
             CircleAvatar(
               backgroundImage: AssetImage('Image/Bhai.jpg'),
-              radius: BorderSide.strokeAlignCenter,
+              
             ),
 
-            title:const Text('Almus Fuad',
+         title: Text('Almus Fuad',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w200,
@@ -84,6 +85,7 @@ class _FuadState extends State<Fuad> {
                 ),
 
                 icon: Icon(Icons.more_vert,color: Colors.white,),
+                
                 itemBuilder: (context) =>[              
                 PopupMenuItem(
                   value: 1,
@@ -114,45 +116,59 @@ class _FuadState extends State<Fuad> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.end,
-           children: [ Container(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+           children: [ 
+            Container(
                 child: CircleAvatar(
                   child: Icon(Icons.mic, color: Colors.white,),
                   backgroundColor: Colors.teal,
                 ),
-              )
+              ),
+              SizedBox(width: 6,)
               ]
           ),
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                labelText: 'Message',
-                
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                
-                suffixIcon: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
+        
+
+                     Padding(
+                       padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+                       child: TextFormField(
+                       decoration: InputDecoration(
+                                           
+                        labelText: 'Message',
+                        border: OutlineInputBorder(
+                        borderSide: BorderSide(width: 5),
+                        borderRadius: BorderRadius.circular(40),
+                                           ),
+                                           
+                        suffixIcon: 
+                                  IconButton(onPressed: (){
+                                 _pickImageCamera();
+                                  },
+                           icon: Icon(Icons.camera_alt)
+                           ),
+                         
+                       prefixIcon: 
+                        IconButton(onPressed: (){
+                            _pickImageCamera();
+                          },
+                           icon: Icon(Icons.emoji_emotions_outlined)
+                           ), 
+                       
+                       suffix:  IconButton(onPressed: (){
+                            _pickImageCamera();
+                          },
+                           icon: Icon(Icons.attachment_rounded)
+                           ), 
+                           
+                           
+                           prefix: IconButton(onPressed: (){}, icon: Icon(Icons.send))
+                          
+                     ),
+                     ),
+                     ),  
                     
-                    IconButton(onPressed: (){
-                      _pickImageGallery();
-                    },
-                     icon: Icon(Icons.attach_file_outlined)),
-                          
-                    SizedBox(width: 4,),
-                          
-                    IconButton(onPressed: (){
-                      _pickImageCamera();
-                    }, icon: Icon(Icons.camera_alt))
-                  ],
-                ),
-                prefixIcon: Icon(Icons.emoji_emotions_outlined),
-              ),
-            ),
-          ),
         ],
       ),
     );
