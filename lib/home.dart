@@ -72,7 +72,11 @@ class _HomeState extends State<Home> {
                SizedBox(width: 10,),
 
                 Container(
-                  child: InkWell(onTap: () {},
+                  child: InkWell(onTap: () {
+                    TextFormField(
+                      
+                    );
+                    },
                     child: Icon(Icons.search,
                     color: Colors.white,)
                     ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:image_picker/image_picker.dart';
 
+
 class Fuad extends StatefulWidget {
   const Fuad({super.key});
 
@@ -50,13 +51,12 @@ class _FuadState extends State<Fuad> {
             backgroundColor: Colors.teal,
             elevation: 0, 
         
-         leading:
-            
-            CircleAvatar(
-              backgroundImage: AssetImage('Image/Bhai.jpg'),
-              
-            ),
-
+         leading:CircleAvatar(
+                  
+                  backgroundImage: AssetImage('Image/Bhai.jpg'),
+                  
+                ),
+ 
          title: Text('Almus Fuad',
             style: TextStyle(
               fontSize: 18,
