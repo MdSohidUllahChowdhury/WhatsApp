@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, prefer_final_fields, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, prefer_final_fields, avoid_unnecessary_containers, unused_field
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -6,6 +6,8 @@ import 'package:newwhatsapp/data_page/calls.dart';
 import 'package:newwhatsapp/data_page/chats.dart';
 import 'package:newwhatsapp/data_page/communities.dart';
 import 'package:newwhatsapp/data_page/updates.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 
 class Home extends StatefulWidget {
@@ -20,6 +22,37 @@ class _HomeState extends State<Home> {
   int _onpageindex = 0; //? Where to index start
   
   var _pagedata =[ Chats(),Updates(),Communities(),Calls() ];
+
+  
+
+  File? _image;
+  String? imagePath;
+
+  Future<void> _pickImageCamera() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
+
+    if (pickedFile!= null) {
+      if (mounted) {
+        super.setState(() {
+          _image = File(pickedFile.path);
+          imagePath = pickedFile.path;
+        });
+      }
+    }
+  }
+
+  Future<void> _pickImageGallery() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (pickedFile!= null) {
+      if (mounted) {
+        super.setState(() {
+          _image = File(pickedFile.path);
+          imagePath = pickedFile.path;
+        });
+      }
+    }
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -28,7 +61,9 @@ class _HomeState extends State<Home> {
        appBar: AppBar(
             actions: [
                Container(
-                  child: InkWell(onTap: () {},
+                  child: InkWell(onTap: () {
+                    _pickImageCamera();
+                  },
                     child: Icon(Icons.camera_alt_outlined,
                     color: Colors.white,)
                     ),
@@ -96,7 +131,9 @@ class _HomeState extends State<Home> {
        body: _pagedata[_onpageindex],
 
        floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _pickImageGallery();
+        },
         
         child: Icon(FontAwesomeIcons.folderPlus,
         color: Colors.white,
