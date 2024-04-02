@@ -86,7 +86,17 @@ class Fuad extends StatelessWidget {
    
       body: Column(mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          
+          Row(
+            children: [
+              Container(margin: EdgeInsets.only(left: 300),
+                child: CircleAvatar(
+                  child: Icon(Icons.mic,color: Colors.white,),
+                  backgroundColor: Colors.teal,
+                ),
+              )
+            ],
+          ),
+
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 25),
              child: TextFormField(
@@ -108,17 +118,6 @@ class Fuad extends StatelessWidget {
               ),
             ),
           ),
-Row(
-            children: [
-              Container(margin: EdgeInsets.only(left: 300),
-                child: CircleAvatar(
-                  child: Icon(Icons.mic,color: Colors.white,),
-                  backgroundColor: Colors.teal,
-                ),
-              )
-            ],
-          ),
-
 
         ],
       ),
