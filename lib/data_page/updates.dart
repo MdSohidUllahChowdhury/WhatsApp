@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Updates extends StatefulWidget {
@@ -18,7 +15,7 @@ class _UpdatesState extends State<Updates> {
           body: Column(
             children: [
              
-              ListTile(
+              const ListTile(
                   
               title: Text('Status'),
               
@@ -29,16 +26,16 @@ class _UpdatesState extends State<Updates> {
               ListTile(
                   leading: CircleAvatar(
                     child: IconButton(
-                      onPressed: (){}, icon: Icon(FontAwesomeIcons.plus)),
+                      onPressed: (){}, icon: const Icon(FontAwesomeIcons.plus)),
                   backgroundColor: Colors.teal,
                   radius: 20, ),
-              title: Text('My status'),
-              subtitle: Text('tap to add stutus update',
+              title: const Text('My status'),
+              subtitle: const Text('tap to add stutus update',
               style: TextStyle(fontSize: 12),),
               
             
             ),
-              ListTile(
+              const ListTile(
                   
               title: Text('Channels'),
               
@@ -46,14 +43,14 @@ class _UpdatesState extends State<Updates> {
               ),
               ),
 
-              ListTile(
+              const ListTile(
                   
               title: Text('Find Channels'),
               
               trailing: Icon((FontAwesomeIcons.magnifyingGlassArrowRight),
               ),
               ),
-              SizedBox(height: 6,),
+              const SizedBox(height: 6,),
               
               SingleChildScrollView(scrollDirection: Axis.horizontal,
                 child: Row(
@@ -71,18 +68,18 @@ class _UpdatesState extends State<Updates> {
                       
                       child: Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                              backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png'),
                             ),
-                            Text('Man City'),
+                            const Text('Man City'),
                             ElevatedButton(onPressed:(){},
-                             child:Text('Follow'),
+                             child:const Text('Follow'),
                              
                              )
                           ],
                     ),
                     ),
-                    SizedBox(width: 4,),
+                    const SizedBox(width: 4,),
                 
                     Container(//2
                       height: 120,
@@ -94,18 +91,18 @@ class _UpdatesState extends State<Updates> {
                       
                       child: Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                              backgroundImage: AssetImage('Image/Bhai.jpg'),
                             ),
-                            Text('Fuad Alum'),
+                            const Text('Fuad Alum'),
                             ElevatedButton(onPressed:(){},
-                             child:Text('Follow'),
+                             child:const Text('Follow'),
                              
                              )
                           ],
                     ),
                     ),
-                    SizedBox(width: 4,),
+                    const SizedBox(width: 4,),
                     
                     
                     Container(//3
@@ -118,18 +115,18 @@ class _UpdatesState extends State<Updates> {
                       
                       child: Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                              backgroundImage: AssetImage('FB.jpg'),
                             ),
-                            Text('Shakil'),
+                            const Text('Shakil'),
                             ElevatedButton(onPressed:(){},
-                             child:Text('Follow'),
+                             child:const Text('Follow'),
                              
                              )
                           ],
                     ),
                     ),
-                    SizedBox(width: 4,),
+                    const SizedBox(width: 4,),
                 
                     Container(//4
                       height: 120,
@@ -141,18 +138,18 @@ class _UpdatesState extends State<Updates> {
                       
                       child: Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                              backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png'),
                             ),
-                            Text('FC Barcelona'),
+                            const Text('FC Barcelona'),
                             ElevatedButton(onPressed:(){},
-                             child:Text('Follow'),
+                             child:const Text('Follow'),
                              
                              )
                           ],
                     ),
                     ),
-                    SizedBox(width: 4,),
+                    const SizedBox(width: 4,),
 
                     Container(//5
                     height: 120,
@@ -164,18 +161,18 @@ class _UpdatesState extends State<Updates> {
                     
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                            backgroundImage:NetworkImage('https://cdn.icon-icons.com/icons2/3041/PNG/512/spotify_logo_icon_189218.png')
                           ),
-                          Text('Spotify'),
+                          const Text('Spotify'),
                           ElevatedButton(onPressed:(){},
-                           child:Text('Follow'),
+                           child:const Text('Follow'),
                            
                            )
                         ],
                   ),
                   ),
-                  SizedBox(width: 4,),
+                  const SizedBox(width: 4,),
 
                   Container(//6
                     height: 120,
@@ -187,18 +184,18 @@ class _UpdatesState extends State<Updates> {
                     
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                            backgroundImage: NetworkImage('https://i.pinimg.com/736x/1b/54/ef/1b54efef3720f6ac39647fc420d4a6f9.jpg')
                           ),
-                          Text('Netflix'),
+                          const Text('Netflix'),
                           ElevatedButton(onPressed:(){},
-                           child:Text('Follow'),
+                           child:const Text('Follow'),
                            
                            )
                         ],
                   ),
                   ),
-                  SizedBox(width: 4,),
+                  const SizedBox(width: 4,),
                   ],
                 ),
               )

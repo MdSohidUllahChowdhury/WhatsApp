@@ -1,7 +1,5 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, avoid_print
 import 'package:flutter/material.dart';
 import 'package:newwhatsapp/chat_page/fuad.dart';
-//import 'package:flutter/widgets.dart';
 
 class Chats extends StatefulWidget {
   const Chats({super.key});
@@ -18,63 +16,61 @@ class _ChatsState extends State<Chats> {
     return Scaffold(
       body: Column(
         children: [
-        Container(
+        SizedBox(
             height: 35,
             width: double.infinity,
             //color: Colors.amber,
             child: Row(
               children: [
-                SizedBox(width: 20,),
-                Icon(Icons.archive_outlined,color: Colors.teal,size: 20,),
-                SizedBox(width: 20,),
-                 InkWell(onTap: () {
-                   print('Archived Page');
-                 },
-                  child: Text('Archived',style: TextStyle(fontSize: 15),))
+                const SizedBox(width: 20,),
+                const Icon(Icons.archive_outlined,color: Colors.teal,size: 20,),
+                const SizedBox(width: 20,),
+                 InkWell(onTap: () {},
+                  child: const Text('Archived',style: TextStyle(fontSize: 15),))
                 ],
               
             )
           ),
-        SizedBox(height: 4,),
+        const SizedBox(height: 4,),
       
         ListTile(
           onTap: (){},
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             radius: 25,
            backgroundImage: AssetImage('Image/FB.jpg'),
             ),
-          title: Text('Shakil'),
-          subtitle: Text('Bhai flutter pera lagche'),
-          trailing: Text('6:33 PM') ,
+          title: const Text('Shakil'),
+          subtitle: const Text('Bhai flutter pera lagche'),
+          trailing: const Text('6:33 PM') ,
          ),
 
          ListTile(
           onTap: (){},
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             radius: 25,
            backgroundImage: AssetImage('Image/Picture01.jpg'),
             ),
-          title: Text('Navil Kazi'),
-          subtitle: Text('Shakil phone dhoro na kno?'),
-          trailing: Text('3:54 PM') ,
+          title: const Text('Navil Kazi'),
+          subtitle: const Text('Shakil phone dhoro na kno?'),
+          trailing: const Text('3:54 PM') ,
          ),
 
         ListTile(
           onTap: (){
             Navigator.push(
-              context,MaterialPageRoute(builder: (context) => Fuad(),) );
+              context,MaterialPageRoute(builder: (context) => const Fuad(),) );
           },
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             radius: 25,
            backgroundImage: AssetImage('Image/Bhai.jpg'),
             ),
-          title: Text('Almus Fuad'),
-          subtitle: Text('Tr kaz kmn chole?'),
-          trailing: Text('11:27 PM') ,
+          title: const Text('Almus Fuad'),
+          subtitle: const Text('Tr kaz kmn chole?'),
+          trailing: const Text('11:27 PM') ,
          ),
 
-       SizedBox(height: 6,),
-       Container(
+       const SizedBox(height: 6,),
+       const SizedBox(
             height: 35,
             width: double.infinity,
             //color: Colors.amber,

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 class Calls extends StatefulWidget {
@@ -10,47 +8,46 @@ class Calls extends StatefulWidget {
 }
 
 class _CallsState extends State<Calls> {
- 
- 
-  Widget listcall = ListTile(
-                  leading: CircleAvatar(
-                  backgroundColor: Colors.teal,
-                  radius: 20, ),
-              title: Text('Shakil'),
-              subtitle: Text('You missed call',style: TextStyle(fontSize: 12),),
-              trailing: Icon((Icons.missed_video_call)),
-            
-            );
-
+  Widget listcall = const ListTile(
+    leading: CircleAvatar(
+      backgroundColor: Colors.teal,
+      radius: 20,
+    ),
+    title: Text('Shakil'),
+    subtitle: Text(
+      'You missed call',
+      style: TextStyle(fontSize: 12),
+    ),
+    trailing: Icon((Icons.missed_video_call)),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-         ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.teal,
-            child: Icon(Icons.link,size: 30,color: Colors.white,)
-            ),
-          title: Text('Create call link'),
-          subtitle: Text('Share a link for your WhatsApp call'),
-         ),
-         SizedBox(height: 10,),
-          
-            listcall,
-            listcall,
-            listcall,
-            listcall,
-            listcall,
-            listcall,
-            
-            
-         
+          const ListTile(
+            leading: CircleAvatar(
+                backgroundColor: Colors.teal,
+                child: Icon(
+                  Icons.link,
+                  size: 30,
+                  color: Colors.white,
+                )),
+            title: Text('Create call link'),
+            subtitle: Text('Share a link for your WhatsApp call'),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          listcall,
+          listcall,
+          listcall,
+          listcall,
+          listcall,
+          listcall,
         ],
-        
       ),
-      
     );
   }
 }

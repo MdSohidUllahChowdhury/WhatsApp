@@ -1,10 +1,6 @@
-// ignore_for_file: unused_field
-
 import 'dart:io';
 import 'package:flutter/material.dart';
-
 import 'package:image_picker/image_picker.dart';
-
 
 class Fuad extends StatefulWidget {
   const Fuad({super.key});
@@ -14,6 +10,7 @@ class Fuad extends StatefulWidget {
 }
 
 class _FuadState extends State<Fuad> {
+  // ignore: unused_field
   File? _image;
   String? imagePath;
 
@@ -50,30 +47,27 @@ class _FuadState extends State<Fuad> {
             toolbarHeight: 45,
             backgroundColor: Colors.teal,
             elevation: 0, 
-        
-         leading:CircleAvatar(
-                  
+         
+         leading:const CircleAvatar(
                   backgroundImage: AssetImage('Image/Bhai.jpg'),
-                  
                 ),
  
-         title: Text('Almus Fuad',
-            style: TextStyle(
+         title: const Text('Almus Fuad',
+              style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w200,
-              color: Color.fromARGB(237, 255, 255, 255),
-              
+              color: Color.fromARGB(237, 255, 255, 255),  
             ),
             ),
             
         actions: [
           IconButton(
-            icon: Icon(Icons.videocam,color: Colors.white,),
+            icon: const Icon(Icons.videocam,color: Colors.white,),
             onPressed: _pickImageCamera,
           ),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           IconButton(
-            icon: Icon(Icons.call,color:Colors.white),
+            icon: const Icon(Icons.call,color:Colors.white),
             onPressed: _pickImageGallery,
           ),
 
@@ -84,26 +78,26 @@ class _FuadState extends State<Fuad> {
                   borderRadius: BorderRadius.circular(2),
                 ),
 
-                icon: Icon(Icons.more_vert,color: Colors.white,),
+                icon: const Icon(Icons.more_vert,color: Colors.white,),
                 
                 itemBuilder: (context) =>[              
-                PopupMenuItem(
+                const PopupMenuItem(
                   value: 1,
                   child: Text('New group')),
 
-                  PopupMenuItem(
+                  const PopupMenuItem(
                   value: 2,
                   child: Text('New broadcast')),
 
-                  PopupMenuItem(
+                  const PopupMenuItem(
                   value: 3,
                   child: Text('Linked  devices')),
 
-                  PopupMenuItem(
+                  const PopupMenuItem(
                   value: 4,
                   child: Text('Starred messages')),
                 
-                 PopupMenuItem(
+                 const PopupMenuItem(
                   value: 5,
                   child: Text('Settings')),
     
@@ -116,15 +110,14 @@ class _FuadState extends State<Fuad> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.end,
            children: [ 
-            Container(
-                child: CircleAvatar(
-                  child: Icon(Icons.mic, color: Colors.white,),
+                CircleAvatar(
                   backgroundColor: Colors.teal,
+                  child:Icon(Icons.mic,color: Colors.white,),
                 ),
-              ),
+              
               SizedBox(width: 6,)
               ]
           ),
@@ -138,7 +131,7 @@ class _FuadState extends State<Fuad> {
                                            
                         labelText: 'Message',
                         border: OutlineInputBorder(
-                        borderSide: BorderSide(width: 5),
+                        borderSide: const BorderSide(width: 5),
                         borderRadius: BorderRadius.circular(40),
                                            ),
                                            
@@ -146,24 +139,24 @@ class _FuadState extends State<Fuad> {
                                   IconButton(onPressed: (){
                                  _pickImageCamera();
                                   },
-                           icon: Icon(Icons.camera_alt)
+                           icon: const Icon(Icons.camera_alt)
                            ),
                          
                        prefixIcon: 
                         IconButton(onPressed: (){
                             _pickImageCamera();
                           },
-                           icon: Icon(Icons.emoji_emotions_outlined)
+                           icon: const Icon(Icons.emoji_emotions_outlined)
                            ), 
                        
                        suffix:  IconButton(onPressed: (){
                             _pickImageCamera();
                           },
-                           icon: Icon(Icons.attachment_rounded)
+                           icon: const Icon(Icons.attachment_rounded)
                            ), 
                            
                            
-                           prefix: IconButton(onPressed: (){}, icon: Icon(Icons.send))
+                           prefix: IconButton(onPressed: (){}, icon: const Icon(Icons.send))
                           
                      ),
                      ),
