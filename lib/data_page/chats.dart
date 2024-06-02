@@ -32,28 +32,6 @@ class _ChatsState extends State<Chats> {
             )
           ),
         const SizedBox(height: 4,),
-      
-        ListTile(
-          onTap: (){},
-          leading: const CircleAvatar(
-            radius: 25,
-           backgroundImage: AssetImage('Image/FB.jpg'),
-            ),
-          title: const Text('Shakil'),
-          subtitle: const Text('Bhai flutter pera lagche'),
-          trailing: const Text('6:33 PM') ,
-         ),
-
-         ListTile(
-          onTap: (){},
-          leading: const CircleAvatar(
-            radius: 25,
-           backgroundImage: AssetImage('Image/Picture01.jpg'),
-            ),
-          title: const Text('Navil Kazi'),
-          subtitle: const Text('Shakil phone dhoro na kno?'),
-          trailing: const Text('3:54 PM') ,
-         ),
 
         ListTile(
           onTap: (){
@@ -68,6 +46,17 @@ class _ChatsState extends State<Chats> {
           subtitle: const Text('Tr kaz kmn chole?'),
           trailing: const Text('11:27 PM') ,
          ),
+
+        ListTile(
+          onTap: (){},
+          leading: const CircleAvatar(
+            radius: 25,
+           backgroundImage: AssetImage('Image/FB.jpg'),
+            ),
+          title: const Text('Shakil Chowdhury'),
+          subtitle: const Text('Alhamdulillah'),
+          trailing: const Text('6:33 PM') ,
+         ), 
 
        const SizedBox(height: 6,),
        const SizedBox(
