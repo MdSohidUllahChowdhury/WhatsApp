@@ -48,13 +48,30 @@ class _FuadState extends State<Fuad> {
             backgroundColor: Colors.teal,
             elevation: 0, 
          
-         leading:const CircleAvatar(
-                  backgroundImage: AssetImage('Image/Bhai.jpg'),
+         leading:Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IconButton(
+              onPressed:() {
+               Navigator.pop(context);
+            }, 
+            icon:const Icon(Icons.arrow_back,size: 15,)
+            ),
+         
+            const CircleAvatar(
+              radius: 15,
+               child:Icon(Icons.person),
+                 // backgroundImage: AssetImage('Image/Bhai.jpg'),
                 ),
+             //const SizedBox(width:6)    
+          ],
+         ),
+         
  
          title: const Text('Almus Fuad',
               style: TextStyle(
-              fontSize: 18,
+                
+              fontSize:12,
               fontWeight: FontWeight.w200,
               color: Color.fromARGB(237, 255, 255, 255),  
             ),

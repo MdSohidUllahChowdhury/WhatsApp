@@ -19,15 +19,21 @@ class _HomeState extends State<Home> {
 
   int _onpageindex = 0; //? Where to index start
   
-  final _pagedata =[ const Chats(),const Updates(),const Communities(),const Calls() ];
-
-  
+  final _pagedata = [ 
+    
+    const Chats(),
+    const Updates(),
+    const Communities(),
+    const Calls() 
+    
+    ];
 
   // ignore: unused_field
   File? _image;
   String? imagePath;
   Future<void> _pickImageCamera() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
+    final pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.camera);
 
     if (pickedFile!= null) {
       if (mounted) {
@@ -40,7 +46,8 @@ class _HomeState extends State<Home> {
   }
 
   Future<void> _pickImageGallery() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+    final pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.gallery);
 
     if (pickedFile!= null) {
       if (mounted) {
@@ -71,13 +78,17 @@ class _HomeState extends State<Home> {
 
             actions: [
                IconButton(onPressed: (){_pickImageCamera();}, 
-               icon:const Icon(Icons.camera_alt,color: Colors.white,)
+               icon:const Icon(
+                Icons.camera_alt,
+                color: Colors.white,)
                ),
 
-               const SizedBox(width: 10,),
+               const SizedBox(width: 10),
 
                IconButton(onPressed: (){}, 
-               icon:const Icon(Icons.search,color: Colors.white,)
+               icon:const Icon(
+                Icons.search,
+                color: Colors.white,)
                ),
 
               
@@ -88,9 +99,14 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(2),
                 ),
 
-                icon: const Icon(Icons.more_vert,color: Colors.white,),
-                itemBuilder: (context) =>[              
-                const PopupMenuItem(
+                icon: const Icon(
+                  Icons.more_vert,
+                  color: Colors.white,),
+                
+                itemBuilder: (context) =>
+                [
+
+                  const PopupMenuItem(
                   value: 1,
                   child: Text('New group')),
 
