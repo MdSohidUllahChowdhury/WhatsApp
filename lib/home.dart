@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:newwhatsapp/data_page/calls.dart';
-import 'package:newwhatsapp/data_page/chats.dart';
-import 'package:newwhatsapp/data_page/communities.dart';
-import 'package:newwhatsapp/data_page/updates.dart';
+import 'package:newwhatsapp/screens/calls.dart';
+import 'package:newwhatsapp/screens/chats.dart';
+import 'package:newwhatsapp/screens/communities.dart';
+import 'package:newwhatsapp/screens/updates.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
