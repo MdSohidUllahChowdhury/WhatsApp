@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:newwhatsapp/Controllers/widget_controller.dart';
 
 class Fuad extends StatefulWidget {
   const Fuad({super.key});
@@ -11,22 +12,22 @@ class Fuad extends StatefulWidget {
 
 class _FuadState extends State<Fuad> {
   // ignore: unused_field
-  File? _image;
-  String? imagePath;
+   File? _image;
+   String? imagePath;
 
-  Future<void> _pickImageCamera() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.camera);
+  // Future<void> _pickImageCamera() async {
+  //   final pickedFile =
+  //       await ImagePicker().pickImage(source: ImageSource.camera);
 
-    if (pickedFile != null) {
-      if (mounted) {
-        super.setState(() {
-          _image = File(pickedFile.path);
-          imagePath = pickedFile.path;
-        });
-      }
-    }
-  }
+  //   if (pickedFile != null) {
+  //     if (mounted) {
+  //       super.setState(() {
+  //         _image = File(pickedFile.path);
+  //         imagePath = pickedFile.path;
+  //       });
+  //     }
+  //   }
+  // }
 
   Future<void> _pickImageGallery() async {
     final pickedFile =
@@ -45,49 +46,32 @@ class _FuadState extends State<Fuad> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: 47,
-            color: Colors.teal,
-            child: 
-            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          PublicUtil.customChatAppBar(),
+          const SizedBox(height: 8),
+           Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                  onPressed: (){}, 
-                  icon:const Icon(Icons.arrow_back_rounded,color: Colors.white)),
-                  const CircleAvatar(
-                    radius: 18,
-                    child: Icon(Icons.person_2),
-                  ),
-                 const SizedBox(width: 110,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                  onPressed: (){}, 
-                  icon:const Icon(Icons.videocam,color: Colors.white,)),
-                      IconButton(
-                  onPressed: (){}, 
-                  icon:const Icon(Icons.call,color: Colors.white)),
-                      IconButton(
-                  onPressed: (){}, 
-                  icon:const Icon(Icons.more_vert_outlined,color: Colors.white)),
-                 
-                    ],
-                  )
+               PublicUtil.customFriendMessage('Hi!!! Whats Uppp Shakilll? How are You?'),
+               PublicUtil.customMyMessage('Alhamdulilah Brother i am doing okay.\nWhat about you...How works going?'),
+               PublicUtil.customFriendMessage('Not Bad at All 👽. Currently I am\n Lrearnin Deep Learning'),
+               PublicUtil.customMyMessage('Wow that is so cool. I am also learning\nHow Much You Learn CNN Model')
               ],
             ),
-
-
           )
         ],
       ),
-
-  );
- }
+      
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        height:65,
+        child: PublicUtil.customChatFeild(() =>_pickImageGallery(),),
+      ),
+    );
+  }
 }
