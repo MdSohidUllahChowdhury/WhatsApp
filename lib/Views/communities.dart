@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class Communities extends StatefulWidget {
   const Communities({
@@ -18,7 +19,7 @@ class _CommunitiesState extends State<Communities> {
         SizedBox(
           width: double.infinity,
           height: 250,
-          child: Image.asset('Image/Picture01.jpg'),
+          child: Image.asset('asset/Picture01.jpg'),
         ),
         const Center(
           child: Text(
@@ -65,7 +66,13 @@ class _CommunitiesState extends State<Communities> {
           height: 15,
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.snackbar(
+             'Developer Mood',
+              'This feature is not available yet. We are working on it.',
+              colorText: Colors.black
+              );
+          },
           style: ButtonStyle(
             minimumSize: WidgetStateProperty.all<Size>(const Size(280, 45)),
             backgroundColor: WidgetStateProperty.all<Color>(Colors.teal),

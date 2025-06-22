@@ -18,9 +18,9 @@ class _CallsState extends State<Calls> {
         color: Colors.white,
       ),
     ),
-    title: Text('Shakil'),
+    title: Text('Shakil Chowdhury'),
     subtitle: Text(
-      'You missed call',
+      'You missed video call',
       style: TextStyle(fontSize: 12),
     ),
     trailing: Icon((Icons.missed_video_call)),

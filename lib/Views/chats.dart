@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newwhatsapp/Widgets/fuad.dart';
+import 'package:newwhatsapp/Widgets/Custom_Chat/fuad.dart';
 
 class Chats extends StatelessWidget {
   const Chats({super.key});
@@ -9,6 +9,7 @@ class Chats extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+          
           SizedBox(
               height: 35,
               width: double.infinity,
@@ -33,9 +34,8 @@ class Chats extends StatelessWidget {
                       ))
                 ],
               )),
-          const SizedBox(
-            height: 4,
-          ),
+          const SizedBox(height: 4),
+          
           ListTile(
             onTap: () {
               Navigator.push(
@@ -46,22 +46,26 @@ class Chats extends StatelessWidget {
             },
             leading: const CircleAvatar(
               radius: 25,
-              backgroundImage: AssetImage('Image/Bhai.jpg'),
+              backgroundImage: AssetImage('asset/Bhai.jpg'),
             ),
             title: const Text('Almus Fuad'),
-            subtitle: const Text('Tr kaz kmn chole?'),
+            subtitle: const Text('Sure, I will send you some notes about CNN Model'),
             trailing: const Text('11:27 PM'),
           ),
+
+
           ListTile(
             onTap: () {},
             leading: const CircleAvatar(
               radius: 25,
-              backgroundImage: AssetImage('Image/FB.jpg'),
+              backgroundImage: AssetImage('asset/FB.jpg'),
             ),
             title: const Text('Shakil Chowdhury'),
             subtitle: const Text('Alhamdulillah'),
             trailing: const Text('6:33 PM'),
           ),
+
+
           ListTile(
             onTap: () {},
             leading: const CircleAvatar(
@@ -70,12 +74,31 @@ class Chats extends StatelessWidget {
               child: Icon(
                 Icons.person,
                 size: 35,
+                color: Colors.white,
               ),
             ),
             title: const Text('Masumur Rahman'),
             subtitle: const Text('Basay aso Broh'),
             trailing: const Text('6:03 PM'),
           ),
+
+          ListTile(
+            onTap: () {},
+            leading: const CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.blue,
+              child: Icon(
+                Icons.person,
+                size: 35,
+                color: Colors.white,
+              ),
+            ),
+            title: const Text('Forhadul Islam'),
+            subtitle: const Text('I am fine'),
+            trailing: const Text('5:45 PM'),
+          ),
+
+
           ListTile(
             onTap: () {},
             leading: const CircleAvatar(
@@ -84,13 +107,32 @@ class Chats extends StatelessWidget {
               child: Icon(
                 Icons.person,
                 size: 35,
+                color: Colors.white,
               ),
             ),
             title: const Text('Navil Kazi'),
             subtitle: const Text('New York or any were you want!'),
             trailing: const Text('2:18 AM'),
           ),
+
+          ListTile(
+            onTap: () {},
+            leading: const CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.red,
+              child: Icon(
+                Icons.person,
+                size: 35,
+                color: Colors.white,
+              ),
+            ),
+            title: const Text('Lionel Messi'),
+            subtitle: const Text('I am the best player in the world'),
+            trailing: const Text('1:00 AM'),
+          ),
           const SizedBox(height: 6),
+          
+          
           const SizedBox(
               height: 35,
               width: double.infinity,
@@ -113,6 +155,8 @@ class Chats extends StatelessWidget {
                   )
                 ],
               )),
+
+
         ],
       ),
     );

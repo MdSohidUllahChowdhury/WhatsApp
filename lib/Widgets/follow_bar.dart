@@ -1,41 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:newwhatsapp/Widgets/follow_bar_card.dart';
 
-class LinkandTitle extends StatelessWidget {
-  final String title;
-  final String linkadd;
-  const LinkandTitle({super.key, required this.title, required this.linkadd});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 130,
-      width: 95,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(131, 158, 158, 158),
+Widget FollowBar() {
+  return const Row(
+    children: [
+      LinkandTitle(
+          title: 'Shakil',
+          linkadd: 'https://avatars.githubusercontent.com/u/157578225?v=4'),
+      SizedBox(
+        width: 4,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(radius: 25, backgroundImage: NetworkImage(linkadd)),
-          const SizedBox(
-            height: 8,
-          ),
-          Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.w500),
-          ),
-          const SizedBox(
-            height: 4,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.only(left: 15, right: 15)),
-            onPressed: () {},
-            child: const Text('Follow'),
-          )
-        ],
+      LinkandTitle(
+          title: 'Forhad',
+          linkadd:
+              'https://lumiere-a.akamaihd.net/v1/images/avatar_800x1200_208c9665.jpeg?region=0%2C0%2C800%2C1200'),
+      SizedBox(
+        width: 4,
       ),
-    );
-  }
+      LinkandTitle(
+          title: 'Raihan',
+          linkadd:
+              'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/e/ee/President_Loki_Official.jpg/revision/latest/scale-to-width-down/1000?cb=20231020213957'),
+      SizedBox(
+        width: 4,
+      ),
+      LinkandTitle(
+          title: 'Navil',
+          linkadd:
+              'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/a/a2/Krysten_Ritter.jpg/revision/latest?cb=20250622013934'),
+      SizedBox(
+        width: 4,
+      ),
+      LinkandTitle(
+          title: 'Masum',
+          linkadd:
+              'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/d/d2/Civilian_Nick_Fury.png/revision/latest/scale-to-width-down/1000?cb=20190303194834'),
+      SizedBox(
+        width: 4,
+      ),
+    ],
+  );
 }
