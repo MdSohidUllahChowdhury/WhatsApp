@@ -2,50 +2,79 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class PublicUtil {
-  
-  static customChatAppBar() {
+  static customUserAppBar(String name) {
     return Container(
       padding: const EdgeInsets.only(top: 48),
       height: 130,
       color: Colors.teal,
       child: Row(
-      
         children: [
           IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(Icons.arrow_back_rounded,size:20, color: Colors.white)),
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(Icons.arrow_back_rounded,
+                  size: 28, color: Colors.white)),
           const CircleAvatar(
-            radius:25,
-            backgroundImage: AssetImage('asset/Bhai.jpg'),
+            radius: 25,
+            backgroundColor: Colors.amber,
+            child: Icon(
+              Icons.person,
+              size: 35,
+              color: Colors.white,
+            ),
           ),
           const SizedBox(
-            width:10,
+            width: 10,
           ),
-          const Text('Alums Fuad',
-          style: TextStyle(fontSize: 17,fontWeight:FontWeight.w600,
-          color: Colors.white),),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ),
+              const Text(
+                'Last seen at 12:07PM',
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              )
+            ],
+          ),
           const SizedBox(
-            width:28,
+            width: 40,
           ),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
                     onPressed: () {},
                     icon: const Icon(
                       Icons.videocam_outlined,
                       color: Colors.white,
+                      size: 28,
                     )),
                 IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.call_outlined, color: Colors.white)),
+                    icon: const Icon(
+                      Icons.call_outlined,
+                      color: Colors.white,
+                      size: 28,
+                    )),
                 IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.more_vert_outlined,
-                        color: Colors.white)),
+                    icon: const Icon(
+                      Icons.more_vert_outlined,
+                      color: Colors.white,
+                      size: 28,
+                    )),
               ],
             ),
           )
@@ -74,7 +103,7 @@ class PublicUtil {
                           onPressed: path,
                           icon: const Icon(Icons.attach_file_outlined)),
                     ),
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.send)),    
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.send)),
                   ],
                 ),
               ),
@@ -103,7 +132,7 @@ class PublicUtil {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 6,left: 8),
+        margin: const EdgeInsets.only(bottom: 6, left: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
         height: 55,
         width: 330,
@@ -125,7 +154,7 @@ class PublicUtil {
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 6,right: 8),
+        margin: const EdgeInsets.only(bottom: 6, right: 8),
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
         height: 55,
         width: 330,

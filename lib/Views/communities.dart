@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 class Communities extends StatefulWidget {
   const Communities({
@@ -67,11 +66,11 @@ class _CommunitiesState extends State<Communities> {
         ),
         ElevatedButton(
           onPressed: () {
-            Get.snackbar(
-             'Developer Mood',
-              'This feature is not available yet. We are working on it.',
-              colorText: Colors.black
-              );
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Notification: Community started!'),
+              ),
+            );
           },
           style: ButtonStyle(
             minimumSize: WidgetStateProperty.all<Size>(const Size(280, 45)),

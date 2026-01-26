@@ -46,10 +46,11 @@ class _UpdatesState extends State<Updates> {
             trailing: Icon((FontAwesomeIcons.magnifyingGlass)),
           ),
           const SizedBox(height: 6),
-          
+
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: FollowBar())
+            child: FollowBar()
+            )
         ],
       ),
     );

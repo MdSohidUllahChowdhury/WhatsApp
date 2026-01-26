@@ -17,7 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_screenutil: ^5.9.0
   font_awesome_flutter: ^10.7.0
-  
+
   # Local Parmission
   image_picker: ^1.0.7
   get: ^4.7.2
@@ -26,23 +26,23 @@ dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: 'asset/whatsappLogo.png'
+  image_path: 'asset/whatsAppLogo.png'
   adaptive_icon_background: "#FFFFFF"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
   flutter_lints: ^3.0.0
 
 
 flutter:
-  
+
   uses-material-design: true
 
   assets:
     - asset/
-  
+
   # fonts:
   #   - family: Schyler
   #     fonts:

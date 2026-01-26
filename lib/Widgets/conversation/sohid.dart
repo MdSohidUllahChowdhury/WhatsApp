@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:newwhatsapp/Controllers/widget_controller.dart';
 
-class Fuad extends StatefulWidget {
-  const Fuad({super.key});
-
+// ignore: must_be_immutable
+class ChatConversation extends StatefulWidget {
+   ChatConversation(this.name, {super.key});
+  String name;
   @override
-  State<Fuad> createState() => _FuadState();
+  State<ChatConversation> createState() => _ChatConversationState();
 }
 
-class _FuadState extends State<Fuad> {
+class _ChatConversationState extends State<ChatConversation> {
   // ignore: unused_field
-   File? _image;
-   String? imagePath;
+  File? _image;
+  String? imagePath;
 
   // Future<void> _pickImageCamera() async {
   //   final pickedFile =
@@ -46,32 +47,37 @@ class _FuadState extends State<Fuad> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          PublicUtil.customChatAppBar(),
+          PublicUtil.customUserAppBar(widget.name),
           const SizedBox(height: 8),
-           Expanded(
+          Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-               PublicUtil.customFriendMessage('Hi!!! Whats Uppp Shakilll? How are You?'),
-               PublicUtil.customMyMessage('Alhamdulilah Brother i am doing okay.\n about you...How are you do?'),
-               PublicUtil.customFriendMessage('Not Bad at All 👽. Currently I am\n Lrearnin Deep Learning'),
-               PublicUtil.customMyMessage('Wow that is so cool. I am also learning\nCan you sent me some note about CNN Model, I need it for my\n project'),
-               PublicUtil.customFriendMessage('Sure, I will send you some notes about CNN Model'),
+                PublicUtil.customFriendMessage(
+                    'Hi!!! Whats Uppp Shakilll? How are You?'),
+                PublicUtil.customMyMessage(
+                    'Alhamdulilah Brother i am doing okay.\n about you...How are you do?'),
+                PublicUtil.customFriendMessage(
+                    'Not Bad at All 👽. Currently I am\n Lrearnin Deep Learning'),
+                PublicUtil.customMyMessage(
+                    'Wow that is so cool. I am also learning\nCan you sent me some note about CNN Model, I need it for my\n project'),
+                PublicUtil.customFriendMessage(
+                    'Sure, I will send you some notes about CNN Model'),
               ],
             ),
           )
         ],
       ),
-      
       bottomNavigationBar: BottomAppBar(
         elevation: 0,
-        height:65,
-        child: PublicUtil.customChatFeild(() =>_pickImageGallery(),),
+        height: 65,
+        child: PublicUtil.customChatFeild(
+          () => _pickImageGallery(),
+        ),
       ),
     );
   }
