@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newwhatsapp/Models/chat_list.dart';
-import 'package:newwhatsapp/Widgets/conversation/sohid.dart';
+import 'package:newwhatsapp/Widgets/conversation/chat_conversation.dart';
 
 class Chats extends StatelessWidget {
   const Chats({super.key});

@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:newwhatsapp/Widgets/conversation/sohid.dart';
-
 class ChatList {
   String name;
   String message;
@@ -12,7 +8,6 @@ class ChatList {
     required this.name,
     required this.message,
     required this.time,
-    
   });
 
   static List<ChatList> chatList = [

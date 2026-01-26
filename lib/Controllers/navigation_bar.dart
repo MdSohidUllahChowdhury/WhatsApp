@@ -15,9 +15,11 @@ class NavigationBarOwn extends StatefulWidget {
 }
 
 class _NavigationBarOwnState extends State<NavigationBarOwn> {
-  int _onpageindex = 0; //? Where to index start
+  //? Where to index start
+  int _onpageindex = 0;
 
-  final _pagedata = [
+  //! Pages List
+  final List _pagedata = [
     const Chats(),
     const Updates(),
     const Communities(),
@@ -59,14 +61,13 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //toolbarHeight: 45,
         backgroundColor: Colors.teal,
         elevation: 0,
         title: const Text(
           "WhatsApp",
           style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
               color: Color.fromARGB(237, 255, 255, 255)),
         ),
         actions: [
@@ -86,14 +87,15 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
                 color: Colors.white,
               )),
           PopupMenuButton(
-              color: Colors.white,
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(2),
-              ),
               icon: const Icon(
                 Icons.more_vert,
                 color: Colors.white,
               ),
+              color: Colors.white,
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
+              position: PopupMenuPosition.under,
               itemBuilder: (context) => [
                     const PopupMenuItem(value: 1, child: Text('New group')),
                     const PopupMenuItem(value: 2, child: Text('New broadcast')),
