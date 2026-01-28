@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:newwhatsapp/Widgets/conversation/sohid.dart';
+// import 'package:whatsapp/Widgets/conversation/sohid.dart';
 
 // Widget chatList(BuildContext context) {
 //   return Column(

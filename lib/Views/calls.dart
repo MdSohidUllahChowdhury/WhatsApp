@@ -1,83 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// Enum to represent the different types of calls.
 enum CallType { incoming, outgoing, missed }
 
-// Model class for a single call log entry.
 class CallModel {
   final String name;
   final String time;
   final CallType type;
   final bool isVideoCall;
-  final String avatarUrl; // Can be a URL or a local asset path.
+  final Icon avatarUrl;
 
-  CallModel({
-    required this.name,
-    required this.time,
-    required this.type,
-    required this.isVideoCall,
-    this.avatarUrl = '', // Default to an empty string.
-  });
+  CallModel(
+      {required this.name,
+      required this.time,
+      required this.type,
+      required this.isVideoCall,
+      required this.avatarUrl});
 }
 
-/// A screen that displays a list of recent calls, similar to WhatsApp.
 class Calls extends StatelessWidget {
   const Calls({super.key});
 
-  // Dummy data for the call log.
   static final List<CallModel> _calls = [
     CallModel(
         name: 'Iron Man',
         time: 'Today, 10:30 AM',
         type: CallType.missed,
         isVideoCall: true,
-        avatarUrl: 'asset/Bhai.jpg'),
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
     CallModel(
         name: 'Captain America',
         time: 'Today, 9:15 AM',
         type: CallType.incoming,
         isVideoCall: false,
-        avatarUrl: 'asset/FB.jpg'),
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
     CallModel(
         name: 'Thor',
         time: 'Yesterday, 8:45 PM',
         type: CallType.outgoing,
         isVideoCall: true,
-        avatarUrl: 'asset/Picture01.jpg'),
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
     CallModel(
         name: 'Hulk',
         time: 'Yesterday, 6:00 PM',
         type: CallType.incoming,
-        isVideoCall: false),
+        isVideoCall: false,
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
     CallModel(
         name: 'Black Widow',
         time: 'September 15, 2:30 PM',
         type: CallType.missed,
-        isVideoCall: false),
+        isVideoCall: false,
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
     CallModel(
         name: 'Hawkeye',
         time: 'September 15, 11:00 AM',
         type: CallType.outgoing,
-        isVideoCall: true),
+        isVideoCall: true,
+        avatarUrl: const Icon(Icons.person, color: Colors.white)),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: _calls.length + 1, // +1 for the "Create call link" header
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return _buildCreateCallLinkHeader();
-          }
-          final call = _calls[index - 1];
-          return _buildCallListItem(call);
-        },
+      body: Column(
+        children: [
+          const SizedBox(height: 6),
+          _buildCreateCallLinkHeader(),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _calls.length, // +1 for the "Create call link" header
+              itemBuilder: (context, index) {
+                final call = _calls[index];
+                return _buildCallListItem(call);
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // TODO: Implement new call functionality.
+          // TOD Implement new call functionality.
         },
         backgroundColor: Colors.teal,
         child: const Icon(Icons.add_ic_call, color: Colors.white),
@@ -100,13 +103,9 @@ class Calls extends StatelessWidget {
   /// Builds a single list item for a call.
   Widget _buildCallListItem(CallModel call) {
     return ListTile(
-      leading: CircleAvatar(
+      leading: const CircleAvatar(
         radius: 28,
-        backgroundImage:
-            call.avatarUrl.isNotEmpty ? AssetImage(call.avatarUrl) : null,
-        child: call.avatarUrl.isEmpty
-            ? const Icon(Icons.person, size: 30, color: Colors.white)
-            : null,
+        backgroundColor: Colors.blueGrey,
       ),
       title: Text(call.name),
       subtitle: Row(

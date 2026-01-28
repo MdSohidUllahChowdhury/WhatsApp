@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:newwhatsapp/Views/calls.dart';
-import 'package:newwhatsapp/Views/chats.dart';
-import 'package:newwhatsapp/Views/communities.dart';
-import 'package:newwhatsapp/Views/updates.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
+import 'package:whatsapp/Views/calls.dart';
+
+import 'package:whatsapp/Views/chats.dart';
+import 'package:whatsapp/Views/communities.dart';
+import 'package:whatsapp/Views/updates.dart';
 
 class NavigationBarOwn extends StatefulWidget {
   const NavigationBarOwn({super.key});
@@ -18,44 +17,13 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
   //? Where to index start
   int _onpageindex = 0;
 
-  //! Pages List
+  //! Pages List,
   final List _pagedata = [
     const Chats(),
     const Updates(),
     const Communities(),
     const Calls()
   ];
-
-  // ignore: unused_field
-  File? _image;
-  String? imagePath;
-  Future<void> _pickImageCamera() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.camera);
-
-    if (pickedFile != null) {
-      if (mounted) {
-        super.setState(() {
-          _image = File(pickedFile.path);
-          imagePath = pickedFile.path;
-        });
-      }
-    }
-  }
-
-  Future<void> _pickImageGallery() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (pickedFile != null) {
-      if (mounted) {
-        super.setState(() {
-          _image = File(pickedFile.path);
-          imagePath = pickedFile.path;
-        });
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +41,7 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
         actions: [
           IconButton(
               onPressed: () {
-                _pickImageCamera();
+                // Get.to(() => const CameraScreen());
               },
               icon: const Icon(
                 Icons.camera_alt,
@@ -111,7 +79,7 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
         onPressed: () {
-          _pickImageGallery();
+          //_pickImageGallery();
         },
         child: const Icon(
           FontAwesomeIcons.folderPlus,

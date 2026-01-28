@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:newwhatsapp/Widgets/follow_bar.dart';
+import 'package:whatsapp/Widgets/follow_bar.dart';
 
 class Updates extends StatefulWidget {
   const Updates({super.key});
@@ -38,19 +38,15 @@ class _UpdatesState extends State<Updates> {
           ),
           const ListTile(
             title: Text('Channels'),
-            trailing: Icon(
-              (FontAwesomeIcons.plus)),
+            trailing: Icon((FontAwesomeIcons.plus)),
           ),
           const ListTile(
             title: Text('Find Channels'),
             trailing: Icon((FontAwesomeIcons.magnifyingGlass)),
           ),
           const SizedBox(height: 6),
-
           SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: FollowBar()
-            )
+              scrollDirection: Axis.horizontal, child: FollowBar())
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:newwhatsapp/Models/chat_list.dart';
-import 'package:newwhatsapp/Widgets/conversation/chat_conversation.dart';
+import 'package:whatsapp/Models/chat_list.dart';
+import 'package:whatsapp/Widgets/conversation/chat_conversation.dart';
 
 class Chats extends StatelessWidget {
   const Chats({super.key});
@@ -12,7 +12,76 @@ class Chats extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(height: 4),
+          const SizedBox(height: 8),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.93,
+            child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              style: const TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
+                filled: true,
+                fillColor: Colors.black54,
+                prefixIcon: const Icon(Icons.search, color: Colors.white),
+                hintText: 'Search or start new chat',
+                hintStyle: const TextStyle(color: Colors.white),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 6),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Chip(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.teal, width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                label: Text('All', style: TextStyle(color: Colors.white)),
+                backgroundColor: Colors.black54,
+              ),
+              SizedBox(width: 5),
+              Chip(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.teal, width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                label: Text('Unread', style: TextStyle(color: Colors.white)),
+                backgroundColor: Colors.black54,
+              ),
+              SizedBox(width: 5),
+              Chip(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.teal, width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                label: Text('Favorites', style: TextStyle(color: Colors.white)),
+                backgroundColor: Colors.black54,
+              ),
+              SizedBox(width: 5),
+              Chip(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.teal, width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                label: Text('Groups', style: TextStyle(color: Colors.white)),
+                backgroundColor: Colors.black54,
+              ),
+              SizedBox(width: 5),
+              Chip(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.teal, width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
+                label: Text('+', style: TextStyle(color: Colors.white)),
+                backgroundColor: Colors.black54,
+              ),
+            ],
+          ),
           //! Chat Section
           ListView.builder(
             itemCount: chatList.length,

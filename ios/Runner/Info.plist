@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>newwhatsapp</string>
+	<string>whatsapp</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -43,6 +43,11 @@
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<!-- Camera & Microphone usage descriptions required for iOS permissions -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires camera access to take photos and record video.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires microphone access for recording audio with video.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 </dict>
