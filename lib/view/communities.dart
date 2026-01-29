@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Communities extends StatefulWidget {
-  const Communities({
-    super.key,
-  });
+  const Communities({super.key});
 
   @override
   State<Communities> createState() => _CommunitiesState();
@@ -18,7 +16,7 @@ class _CommunitiesState extends State<Communities> {
         SizedBox(
           width: double.infinity,
           height: 250,
-          child: Image.asset('asset/Picture01.jpg'),
+          child: Image.asset('asset/communities.jpg'),
         ),
         const Center(
           child: Text(

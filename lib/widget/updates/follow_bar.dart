@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/Widgets/follow_bar_card.dart';
+import 'package:whatsapp/widget/updates/follow_bar_card.dart';
 
 Widget FollowBar() {
   return const Row(

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:whatsapp/Views/calls.dart';
-
-import 'package:whatsapp/Views/chats.dart';
-import 'package:whatsapp/Views/communities.dart';
-import 'package:whatsapp/Views/updates.dart';
+import 'package:whatsapp/view/calls.dart';
+import 'package:whatsapp/view/chats.dart';
+import 'package:whatsapp/view/communities.dart';
+import 'package:whatsapp/view/updates.dart';
 
 class NavigationBarOwn extends StatefulWidget {
   const NavigationBarOwn({super.key});
@@ -14,7 +13,7 @@ class NavigationBarOwn extends StatefulWidget {
 }
 
 class _NavigationBarOwnState extends State<NavigationBarOwn> {
-  //? Where to index start
+  //! Where to index start
   int _onpageindex = 0;
 
   //! Pages List,
@@ -79,7 +78,6 @@ class _NavigationBarOwnState extends State<NavigationBarOwn> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
         onPressed: () {
-          //_pickImageGallery();
         },
         child: const Icon(
           FontAwesomeIcons.folderPlus,

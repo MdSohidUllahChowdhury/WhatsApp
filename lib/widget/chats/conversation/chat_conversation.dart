@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:whatsapp/Widgets/chats/chats_utils.dart';
+import 'package:whatsapp/widget/chats/conversation/chats_utils.dart';
 
 // ignore: must_be_immutable
 class ChatConversation extends StatefulWidget {
