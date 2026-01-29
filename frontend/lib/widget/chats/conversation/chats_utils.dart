@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
-class PublicUtil {
+class WidgetMessage {
   static customUserAppBar(String name) {
     return Container(
       padding: const EdgeInsets.only(top: 48),
@@ -104,121 +104,120 @@ class PublicUtil {
     );
   }
 
-  static customChatTextFeild(void Function()? path, context) {
+  static customChatTextFeild(context) {
     return Row(
       children: [
         Expanded(
-          child: TextField(
+          child: TextFormField(
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(18),
+                  borderSide:
+                      const BorderSide(color: Colors.black87, width: .75)),
+              hintText: 'Message',
               prefixIcon: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.emoji_emotions_outlined)),
-              hintText: 'Message',
               suffixIcon: SizedBox(
                 width: 80,
                 child: Row(
                   children: [
                     Expanded(
                       child: IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.width * .54,
-                                  width:
-                                      MediaQuery.of(context).size.width * .90,
-                                  child: const Center(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor:
-                                                  Colors.blueAccent,
-                                              child: Icon(
-                                                Icons.edit_document,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                        icon: const Icon(Icons.attach_file_outlined),
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: MediaQuery.of(context).size.width * .54,
+                                width: MediaQuery.of(context).size.width * .90,
+                                child: const Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.blueAccent,
+                                            child: Icon(
+                                              Icons.edit_document,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor: Colors.pink,
-                                              child: Icon(
-                                                Icons.camera_alt,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.pink,
+                                            child: Icon(
+                                              Icons.camera_alt,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor: Colors.purple,
-                                              child: Icon(
-                                                Icons.photo,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.purple,
+                                            child: Icon(
+                                              Icons.photo,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 25,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor: Colors.amber,
-                                              child: Icon(
-                                                Icons.audiotrack_outlined,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 25,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.amber,
+                                            child: Icon(
+                                              Icons.audiotrack_outlined,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor: Colors.teal,
-                                              child: Icon(
-                                                Icons.pin_drop,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.teal,
+                                            child: Icon(
+                                              Icons.pin_drop,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                            CircleAvatar(
-                                              radius: 35,
-                                              backgroundColor: Colors.blue,
-                                              child: Icon(
-                                                Icons.person,
-                                                size: 35,
-                                                color: Colors.white,
-                                              ),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 35,
+                                            backgroundColor: Colors.blue,
+                                            child: Icon(
+                                              Icons.person,
+                                              size: 35,
+                                              color: Colors.white,
                                             ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                      ],
-                                    ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                    ],
                                   ),
-                                );
-                              },
-                            );
-                          },
-                          icon: const Icon(Icons.attach_file_outlined)),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                     IconButton(onPressed: () {}, icon: const Icon(Icons.send)),
                   ],

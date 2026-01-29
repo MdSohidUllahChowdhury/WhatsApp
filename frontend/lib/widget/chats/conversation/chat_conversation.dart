@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp/widget/chats/conversation/chats_utils.dart';
 
 // ignore: must_be_immutable
@@ -12,48 +10,30 @@ class ChatConversation extends StatefulWidget {
 }
 
 class _ChatConversationState extends State<ChatConversation> {
-  // ignore: unused_field
-  File? _image;
-  String? imagePath;
-
-  Future<void> _pickImageGallery() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (pickedFile != null) {
-      if (mounted) {
-        super.setState(() {
-          _image = File(pickedFile.path);
-          imagePath = pickedFile.path;
-        });
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          PublicUtil.customUserAppBar(widget.name),
+          WidgetMessage.customUserAppBar(widget.name),
           const SizedBox(height: 8),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                PublicUtil.customFriendMessage(
+                WidgetMessage.customFriendMessage(
                     'Hi!!! Whats Uppp Shakilll? How are You?'),
-                PublicUtil.customMyMessage(
+                WidgetMessage.customMyMessage(
                     'Alhamdulilah Brother i am doing okay.\n What about you...How are you do?'),
-                PublicUtil.customFriendMessage(
+                WidgetMessage.customFriendMessage(
                     'Not Bad at All 👽. Currently I am\n Learning Deep Learning'),
-                PublicUtil.customMyMessage(
+                WidgetMessage.customMyMessage(
                     'Wow that is cool. I am also learning\nCan you sent me some notes about CNN Model, I need those for my\n project'),
-                PublicUtil.customFriendMessage(
+                WidgetMessage.customFriendMessage(
                     'Sure, I will send you some notes'),
-                PublicUtil.customMyMessage(
+                WidgetMessage.customMyMessage(
                     'Can you sent me notes in 1 to 2 hours?')
               ],
             ),
@@ -61,12 +41,10 @@ class _ChatConversationState extends State<ChatConversation> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.transparent,
         elevation: 0,
-        height: 65,
-        child: PublicUtil.customChatTextFeild(
-          () => _pickImageGallery(),
-          context,
-        ),
+        height: 80,
+        child: WidgetMessage.customChatTextFeild(context),
       ),
     );
   }
