@@ -244,19 +244,41 @@ class WidgetMessage {
   static customFriendMessage(String friendMessage) {
     return Align(
       alignment: Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 6, left: 8),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-        height: 55,
-        width: 330,
-        decoration: BoxDecoration(
-            color: Colors.grey.shade800,
-            borderRadius: const BorderRadius.all(Radius.circular(14))),
-        child: Center(
-          child: Text(
-            friendMessage,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
-            textAlign: TextAlign.right,
+      child: Card(
+        color: Colors.white,
+        child: Container(
+          constraints: const BoxConstraints(
+            maxWidth: 320,
+          ),
+          margin: const EdgeInsets.only(bottom: 6, right: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          decoration: const BoxDecoration(
+              //color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(14))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                friendMessage,
+                style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                textAlign: TextAlign.left,
+              ),
+              const SizedBox(height: 4),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("02:23PM",
+                      style: TextStyle(
+                          color: Colors.grey[500],
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500)),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),
@@ -266,19 +288,45 @@ class WidgetMessage {
   static customMyMessage(String myMessage) {
     return Align(
       alignment: Alignment.centerRight,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 6, right: 8),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-        height: 55,
-        width: 330,
-        decoration: const BoxDecoration(
-            color: Colors.teal,
-            borderRadius: BorderRadius.all(Radius.circular(14))),
-        child: Center(
-          child: Text(
-            myMessage,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
-            textAlign: TextAlign.left,
+      child: Card(
+        color: const Color(0xffdcf8c6),
+        child: Container(
+          constraints: const BoxConstraints(
+            maxWidth: 290,
+          ),
+          margin: const EdgeInsets.only(bottom: 6, right: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(14))),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                myMessage,
+                style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                textAlign: TextAlign.right,
+              ),
+              const SizedBox(height: 4),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("02:23PM",
+                      style: TextStyle(
+                          color: Colors.grey[500],
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500)),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Icon(
+                    Icons.done_all,
+                    size: 18.0,
+                    color: Colors.blue,
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),

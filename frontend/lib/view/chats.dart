@@ -24,11 +24,12 @@ class Chats extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
                 filled: true,
-                fillColor: Colors.black54,
-                prefixIcon: const Icon(Icons.search, color: Colors.white),
+                fillColor: Colors.black26,
+                prefixIcon: const Icon(Icons.search, color: Colors.black38),
                 hintText: 'Search or start new chat',
-                hintStyle: const TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.black38),
                 border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
