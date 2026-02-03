@@ -11,9 +11,9 @@ const io = require('socket.io')(server)
 app.use(express.json());
 
 //
-io.on("Connectin", (socket) => {
+io.on("Connection", (socket) => {
   console.log("Connected")
-  console.log(socket.id)
+  console.log(socket.id,"Has joined")
   socket.on('event',
     (data) => {
     console.log(data)

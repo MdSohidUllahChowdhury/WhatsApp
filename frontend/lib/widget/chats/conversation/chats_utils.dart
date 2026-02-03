@@ -105,10 +105,15 @@ class WidgetMessage {
   }
 
   static customChatTextFeild(context) {
+
+     final messageController = TextEditingController();
     return Row(
       children: [
         Expanded(
           child: TextFormField(
+            controller: messageController,
+            keyboardType: TextInputType.multiline,
+            maxLines: null,
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,

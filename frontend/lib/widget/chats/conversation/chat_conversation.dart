@@ -23,24 +23,17 @@ class _ChatConversationState extends State<ChatConversation> {
   }
 
   void socketConnect() {
-    socket = IO.io(
-      "http://192.168.0.212:5000",
-      IO.OptionBuilder()
-          .setTransports(['websocket'])
-          .disableAutoConnect()
-          .build(),
-    );
-
-    socket!.onConnect((_) {
-      print('Connected');
-      socket!.emit('event', 'HI Socket');
-    });
-
-    socket!.onConnectError((err) {
-      print('Connect error: $err');
+    socket = IO.io("http://192.168.0.212:5000", <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
     });
 
     socket!.connect();
+    socket!.emit('event', 'HI Socket');
+    socket!.onConnect((val) {
+      print(val);
+    });
+    print("Socket Status: => ${socket!.connected}");
   }
 
   @override
