@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:whatsapp/model/chat_list.dart';
-import 'package:whatsapp/widget/chats/conversation/chat_conversation.dart';
-import 'package:whatsapp/widget/chats/filter_section.dart';
+import 'package:ping/model/chat_list.dart';
+import 'package:ping/widget/chats/conversation/chat_conversation.dart';
+import 'package:ping/widget/chats/filter_section.dart';
 
 class Chats extends StatelessWidget {
   const Chats({super.key});
@@ -24,7 +24,7 @@ class Chats extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
                 filled: true,
-                fillColor: Colors.black26,
+                fillColor: Colors.grey.shade100,
                 prefixIcon: const Icon(Icons.search, color: Colors.black38),
                 hintText: 'Search or start new chat',
                 hintStyle: const TextStyle(color: Colors.black38),

@@ -1,4 +1,4 @@
-package com.example.whatsapp
+package com.example.ping
 
 import io.flutter.embedding.android.FlutterActivity
 

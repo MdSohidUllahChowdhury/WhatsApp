@@ -2,7 +2,7 @@
     <!-- Permission for camera access -->
     <uses-permission android:name="android.permission.CAMERA" />
     <application
-        android:label="WhatsApp"
+        android:label="ping"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesClearTextTraffic="true">

@@ -7,7 +7,7 @@ Widget filterSection() {
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
       label: Text(name, style: const TextStyle(color: Colors.black45)),
-      backgroundColor: Colors.black26,
+      backgroundColor: Colors.white,
     );
   }
 

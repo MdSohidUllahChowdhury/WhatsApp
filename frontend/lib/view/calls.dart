@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/model/call_list.dart';
+import 'package:ping/model/call_list.dart';
 
 class Calls extends StatefulWidget {
   const Calls({super.key});
@@ -21,7 +21,7 @@ class _CallsState extends State<Calls> {
               child: Icon(Icons.link, color: Colors.white),
             ),
             title: Text('Create call link'),
-            subtitle: Text('Share a link for your WhatsApp call'),
+            subtitle: Text('Share a link for your ping call'),
           ),
           Expanded(
             child: ListView.builder(
