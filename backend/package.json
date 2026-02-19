@@ -5,9 +5,9 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "ping_server.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon ping_server.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

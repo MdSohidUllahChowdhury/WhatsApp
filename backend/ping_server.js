@@ -2,23 +2,24 @@ const port = 5000;
 const express = require('express');
 const cors = require('cors');
 var http = require('http');
+const { setFlagsFromString } = require('v8');
 const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server)
 
-//Middel Ware
+//* Middel Ware
 //app.use(cors());
 app.use(express.json());
 
 //
 io.on("Connection", (socket) => {
   console.log("Connected")
-  console.log(socket.id,"Has joined")
+  console.log(socket.id, "Has joined")
   socket.on('event',
     (data) => {
-    console.log(data)
-    io.emit('event', data)
-  })
+      console.log(data)
+      io.emit('event', data)
+    })
 }
 );
 
